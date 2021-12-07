@@ -9,12 +9,11 @@ module.exports = {
     fontFamily: {
       'sans': ['Roboto', 'Helvetica', 'Arial', 'sans-serif']
     },
-    extend: {
-      fontFamily: ['hover', 'focus'],
-    },
   },
   variants: {
-    extend: {},
+    extend: {
+      fontWeight: ['hover', 'focus'],
+    }
   },
   plugins: [],
 }

@@ -19867,14 +19867,20 @@ var staticRenderFns = [
     return _c("div", { staticClass: "flex justify-between text-lg py-4" }, [
       _c("div", [_vm._v("LOGO")]),
       _vm._v(" "),
-      _c("ul", { staticClass: "flex font-thin items-center text-gray-700" }, [
-        _c("li", { staticClass: "mr-12 cursor-pointer" }, [_vm._v("Home")]),
+      _c("ul", { staticClass: "flex font-normal items-center text-gray-700" }, [
+        _c("li", { staticClass: "mr-12 cursor-pointer hover:font-bold" }, [
+          _vm._v("Home"),
+        ]),
         _vm._v(" "),
-        _c("li", { staticClass: "mr-12 cursor-pointer" }, [_vm._v("Shops")]),
+        _c("li", { staticClass: "mr-12 cursor-pointer hover:font-bold" }, [
+          _vm._v("Shops"),
+        ]),
         _vm._v(" "),
-        _c("li", { staticClass: "mr-12 cursor-pointer" }, [_vm._v("Products")]),
+        _c("li", { staticClass: "mr-12 cursor-pointer hover:font-bold" }, [
+          _vm._v("Products"),
+        ]),
         _vm._v(" "),
-        _c("li", { staticClass: "mr-12 cursor-pointer font-black" }, [
+        _c("li", { staticClass: "mr-12 cursor-pointer hover:font-bold" }, [
           _vm._v("Cart"),
         ]),
         _vm._v(" "),
