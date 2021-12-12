@@ -2108,6 +2108,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -19986,6 +19987,8 @@ var render = function () {
         ),
       ]),
       _vm._v(" "),
+      _c("h1", { staticClass: "text-3xl mt-8 mb-3" }, [_vm._v("Products")]),
+      _vm._v(" "),
       _c("products-list"),
     ],
     1
@@ -20084,146 +20087,82 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "grid grid-cols-4 gap-4 mt-4" }, [
+    return _c("div", { staticClass: "grid grid-cols-4 gap-4" }, [
       _c("div", { staticClass: "card" }, [
-        _c("img", {
-          staticClass: "h-70",
-          attrs: {
-            src: "https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80",
-            alt: "image of product",
-          },
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "p-3 relative" }, [
-          _c(
-            "a",
-            {
-              staticClass:
-                "no-underline hover:underline font-bold text-xl cursor-pointer",
-              attrs: { href: "#" },
+        _c("a", { attrs: { href: "#" } }, [
+          _c("img", {
+            staticClass: "h-70",
+            attrs: {
+              src: "https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80",
+              alt: "image of product",
             },
-            [_vm._v("A Fancy Item")]
-          ),
+          }),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "p-3" }, [
+          _c("div", [
+            _c(
+              "a",
+              {
+                staticClass:
+                  "no-underline hover:underline font-bold text-xl cursor-pointer",
+                attrs: { href: "#" },
+              },
+              [_vm._v("A Fancy Item")]
+            ),
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _c(
+              "a",
+              {
+                staticClass:
+                  "no-underline hover:underline text-base cursor-pointer",
+                attrs: { href: "#" },
+              },
+              [_vm._v("A Fancy Shop")]
+            ),
+          ]),
           _vm._v(" "),
           _c("p", { staticClass: "text-base" }, [_vm._v("RM30")]),
         ]),
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "card" }, [
-        _c("img", {
-          staticClass: "h-70",
-          attrs: {
-            src: "https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80",
-            alt: "image of product",
-          },
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "p-3 relative" }, [
-          _c(
-            "a",
-            {
-              staticClass:
-                "no-underline hover:underline font-bold text-xl cursor-pointer",
-              attrs: { href: "#" },
+        _c("a", { attrs: { href: "#" } }, [
+          _c("img", {
+            staticClass: "h-70",
+            attrs: {
+              src: "https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80",
+              alt: "image of product",
             },
-            [_vm._v("A Fancy Item")]
-          ),
-          _vm._v(" "),
-          _c("p", { staticClass: "text-base" }, [_vm._v("RM30")]),
+          }),
         ]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "card" }, [
-        _c("img", {
-          staticClass: "h-70",
-          attrs: {
-            src: "https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80",
-            alt: "image of product",
-          },
-        }),
         _vm._v(" "),
-        _c("div", { staticClass: "p-3 relative" }, [
-          _c(
-            "a",
-            {
-              staticClass:
-                "no-underline hover:underline font-bold text-xl cursor-pointer",
-              attrs: { href: "#" },
-            },
-            [_vm._v("A Fancy Item")]
-          ),
+        _c("div", { staticClass: "p-3" }, [
+          _c("div", [
+            _c(
+              "a",
+              {
+                staticClass:
+                  "no-underline hover:underline font-bold text-xl cursor-pointer",
+                attrs: { href: "#" },
+              },
+              [_vm._v("A Fancy Item")]
+            ),
+          ]),
           _vm._v(" "),
-          _c("p", { staticClass: "text-base" }, [_vm._v("RM30")]),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "card" }, [
-        _c("img", {
-          staticClass: "h-70",
-          attrs: {
-            src: "https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80",
-            alt: "image of product",
-          },
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "p-3 relative" }, [
-          _c(
-            "a",
-            {
-              staticClass:
-                "no-underline hover:underline font-bold text-xl cursor-pointer",
-              attrs: { href: "#" },
-            },
-            [_vm._v("A Fancy Item")]
-          ),
-          _vm._v(" "),
-          _c("p", { staticClass: "text-base" }, [_vm._v("RM30")]),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "card" }, [
-        _c("img", {
-          staticClass: "h-70",
-          attrs: {
-            src: "https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80",
-            alt: "image of product",
-          },
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "p-3 relative" }, [
-          _c(
-            "a",
-            {
-              staticClass:
-                "no-underline hover:underline font-bold text-xl cursor-pointer",
-              attrs: { href: "#" },
-            },
-            [_vm._v("A Fancy Item")]
-          ),
-          _vm._v(" "),
-          _c("p", { staticClass: "text-base" }, [_vm._v("RM30")]),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "card" }, [
-        _c("img", {
-          staticClass: "h-70",
-          attrs: {
-            src: "https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80",
-            alt: "image of product",
-          },
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "p-3 relative" }, [
-          _c(
-            "a",
-            {
-              staticClass:
-                "no-underline hover:underline font-bold text-xl cursor-pointer",
-              attrs: { href: "#" },
-            },
-            [_vm._v("A Fancy Item")]
-          ),
+          _c("div", [
+            _c(
+              "a",
+              {
+                staticClass:
+                  "no-underline hover:underline text-base cursor-pointer",
+                attrs: { href: "#" },
+              },
+              [_vm._v("A Fancy Shop")]
+            ),
+          ]),
           _vm._v(" "),
           _c("p", { staticClass: "text-base" }, [_vm._v("RM30")]),
         ]),
