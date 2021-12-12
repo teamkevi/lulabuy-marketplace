@@ -8,6 +8,7 @@
                 </svg>
             </button>
         </div>
+        <h1 class="text-3xl mt-8 mb-3">Products</h1>
         <products-list></products-list>
     </div>
 </template>
