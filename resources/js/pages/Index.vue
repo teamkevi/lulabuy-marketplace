@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import ProductsList from './products/ProductsList'
-import ShopsList from './shops/ShopsList'
+import ProductsList from '../components/products/ProductsList'
+import ShopsList from '../components/shops/ShopsList'
 
 export default {
     components: {
