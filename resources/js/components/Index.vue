@@ -8,5 +8,16 @@
                 </svg>
             </button>
         </div>
+        <products-list></products-list>
     </div>
 </template>
+
+<script>
+import ProductsList from './products/ProductsList'
+
+export default {
+    components: {
+        ProductsList
+    }
+}
+</script>
