@@ -10,15 +10,19 @@
         </div>
         <h1 class="text-3xl mt-8 mb-3">Products</h1>
         <products-list></products-list>
+        <h1 class="text-3xl mt-8 mb-3">Shops</h1>
+        <shops-list></shops-list>
     </div>
 </template>
 
 <script>
 import ProductsList from './products/ProductsList'
+import ShopsList from './shops/ShopsList'
 
 export default {
     components: {
-        ProductsList
+        ProductsList,
+        ShopsList
     }
 }
 </script>
