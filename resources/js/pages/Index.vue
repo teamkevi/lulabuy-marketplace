@@ -8,19 +8,22 @@
                 </svg>
             </button>
         </div>
-        <h1 class="text-3xl mt-8 mb-3">Products</h1>
+        <categories-slider></categories-slider>
+        <h1 class="text-3xl mt-8 mb-3">Featured Products</h1>
         <products-list></products-list>
-        <h1 class="text-3xl mt-8 mb-3">Shops</h1>
+        <h1 class="text-3xl mt-8 mb-3">Featured Shops</h1>
         <shops-list></shops-list>
     </div>
 </template>
 
 <script>
+import CategoriesSlider from '../components/CategoriesSlider'
 import ProductsList from '../components/products/ProductsList'
 import ShopsList from '../components/shops/ShopsList'
 
 export default {
     components: {
+        CategoriesSlider,
         ProductsList,
         ShopsList
     }
