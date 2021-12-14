@@ -1,5 +1,5 @@
 <template>
-    <div class="mx-20">
+    <div class="mx-20 font-sans">
         <the-header></the-header>
         <search-bar v-if="!isCheckout"></search-bar>
         <router-view></router-view>

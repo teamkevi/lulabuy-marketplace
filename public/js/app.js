@@ -20389,7 +20389,7 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "mx-20" },
+    { staticClass: "mx-20 font-sans" },
     [
       _c("the-header"),
       _vm._v(" "),
