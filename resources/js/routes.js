@@ -1,7 +1,8 @@
-import VueRouter from "vue-router";
-import Index from "./pages/Index";
-import Shops from "./pages/Shops"
-import Products from "./pages/Products"
+import VueRouter from 'vue-router';
+import Index from './pages/Index';
+import Shops from './pages/Shops';
+import Products from './pages/Products';
+import Checkout from './pages/Checkout';
 
 const routes = [
     {
@@ -18,6 +19,11 @@ const routes = [
         path: '/products',
         name: 'products',
         component: Products
+    },
+    {
+        path: '/checkout',
+        name: 'checkout',
+        component: Checkout
     }
 ];
 

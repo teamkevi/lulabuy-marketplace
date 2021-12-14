@@ -11,9 +11,11 @@
             <li class="mr-12 cursor-pointer hover:font-bold">
                 <router-link :to="{name: 'products'}">Products</router-link>
             </li>
-            <li class="mr-12 cursor-pointer hover:font-bold">Cart</li>
+            <li class="mr-12 cursor-pointer hover:font-bold">
+                <router-link :to="{name: 'checkout'}">Cart</router-link>
+            </li>
             <li>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Sign Up</button>
+                <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Sign Up</button>
             </li>
         </ul>
     </nav>
