@@ -1,7 +1,7 @@
 <template>
     <div class="mx-20">
         <the-header></the-header>
-        <search-bar></search-bar>
+        <search-bar v-if="!isCheckout"></search-bar>
         <router-view></router-view>
     </div>
 </template>
@@ -14,6 +14,11 @@ export default {
     components: {
         TheHeader,
         SearchBar
+    },
+    computed: {
+        isCheckout() {
+            return this.$route.name === 'checkout'
+        }
     }
 }
 </script>
