@@ -2065,8 +2065,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _components_TheHeader_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/TheHeader.vue */ "./resources/js/components/TheHeader.vue");
-/* harmony import */ var _components_Searchbar_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Searchbar.vue */ "./resources/js/components/Searchbar.vue");
+/* harmony import */ var _components_TheHeader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/TheHeader */ "./resources/js/components/TheHeader.vue");
+/* harmony import */ var _components_Searchbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Searchbar */ "./resources/js/components/Searchbar.vue");
 //
 //
 //
@@ -2079,8 +2079,8 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    TheHeader: _components_TheHeader_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    SearchBar: _components_Searchbar_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    TheHeader: _components_TheHeader__WEBPACK_IMPORTED_MODULE_0__["default"],
+    SearchBar: _components_Searchbar__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   computed: {
     isCheckout: function isCheckout() {
@@ -2304,8 +2304,10 @@ __webpack_require__.r(__webpack_exports__);
 
 var routes = [{
   path: '/',
-  name: 'index',
-  component: _pages_Index__WEBPACK_IMPORTED_MODULE_0__["default"]
+  name: 'checkout',
+  component: _pages_Checkout__WEBPACK_IMPORTED_MODULE_3__["default"] // name: 'index',
+  // component: Index
+
 }, {
   path: '/shops',
   name: 'shops',
@@ -20832,8 +20834,80 @@ var staticRenderFns = [
     return _c("div", [
       _c("h1", { staticClass: "text-3xl my-8" }, [_vm._v("Checkout")]),
       _vm._v(" "),
-      _c("div", { staticClass: "flex" }, [
-        _c("div", { staticClass: "basis-3/5" }, [_vm._v("Items")]),
+      _c("div", { staticClass: "flex gap-x-12" }, [
+        _c("div", { staticClass: "basis-3/5" }, [
+          _c(
+            "div",
+            { staticClass: "border-b flex justify-between py-4 items-center" },
+            [
+              _c("div", { staticClass: "flex gap-x-8 items-center" }, [
+                _c("img", {
+                  staticClass: "h-40 rounded",
+                  attrs: {
+                    src: "https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80",
+                    alt: "image of product",
+                  },
+                }),
+                _vm._v(" "),
+                _c("div", [
+                  _c("p", { staticClass: "font-medium text-lg" }, [
+                    _vm._v("A Cool Item"),
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-base" }, [_vm._v("RM23.90")]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", [
+                _c("button", [_vm._v("-")]),
+                _vm._v(" "),
+                _c("input", { attrs: { type: "number" } }),
+                _vm._v(" "),
+                _c("button", [_vm._v("+")]),
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "font-bold text-lg" }, [
+                _vm._v("RM54.90"),
+              ]),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "border-b flex justify-between py-4 items-center" },
+            [
+              _c("div", { staticClass: "flex gap-x-8 items-center" }, [
+                _c("img", {
+                  staticClass: "h-40 rounded",
+                  attrs: {
+                    src: "https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80",
+                    alt: "image of product",
+                  },
+                }),
+                _vm._v(" "),
+                _c("div", [
+                  _c("p", { staticClass: "font-medium text-lg" }, [
+                    _vm._v("A Cool Item"),
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-base" }, [_vm._v("RM23.90")]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", [
+                _c("button", [_vm._v("-")]),
+                _vm._v(" "),
+                _c("input", { attrs: { type: "number" } }),
+                _vm._v(" "),
+                _c("button", [_vm._v("+")]),
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "font-bold text-lg" }, [
+                _vm._v("RM54.90"),
+              ]),
+            ]
+          ),
+        ]),
         _vm._v(" "),
         _c("div", { staticClass: "basis-2/5 card p-4 bg-gray-100 border-0" }, [
           _c("h2", { staticClass: "text-lg font-bold mb-2" }, [

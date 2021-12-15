@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import TheHeader from './components/TheHeader.vue'
-import SearchBar from './components/Searchbar.vue'
+import TheHeader from './components/TheHeader'
+import SearchBar from './components/Searchbar'
 
 export default {
     components: {
