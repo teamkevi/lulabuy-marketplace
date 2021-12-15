@@ -7,8 +7,10 @@ import Checkout from './pages/Checkout';
 const routes = [
     {
         path: '/',
-        name: 'index',
-        component: Index
+        name: 'checkout',
+        component: Checkout
+        // name: 'index',
+        // component: Index
     },
     {
         path: '/shops',
