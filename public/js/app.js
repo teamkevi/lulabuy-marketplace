@@ -20744,63 +20744,73 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("nav", { staticClass: "flex justify-between text-lg py-4" }, [
-    _c("div", [_vm._v("LOGO")]),
-    _vm._v(" "),
-    !_vm.hideNavigationItems
-      ? _c(
-          "ul",
-          { staticClass: "flex font-normal items-center text-gray-700" },
-          [
-            _c(
-              "li",
-              { staticClass: "mr-12 cursor-pointer hover:font-bold" },
-              [
-                _c("router-link", { attrs: { to: { name: "index" } } }, [
-                  _vm._v("Home"),
-                ]),
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              { staticClass: "mr-12 cursor-pointer hover:font-bold" },
-              [
-                _c("router-link", { attrs: { to: { name: "shops" } } }, [
-                  _vm._v("Shops"),
-                ]),
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              { staticClass: "mr-12 cursor-pointer hover:font-bold" },
-              [
-                _c("router-link", { attrs: { to: { name: "products" } } }, [
-                  _vm._v("Products"),
-                ]),
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              { staticClass: "mr-12 cursor-pointer hover:font-bold" },
-              [
-                _c("router-link", { attrs: { to: { name: "checkout" } } }, [
-                  _vm._v("Cart"),
-                ]),
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _vm._m(0),
-          ]
-        )
-      : _vm._e(),
-  ])
+  return _c(
+    "nav",
+    { staticClass: "flex justify-between text-lg py-3 border-b-2 mb-8" },
+    [
+      _c("router-link", { attrs: { to: { name: "index" } } }, [
+        _c("img", {
+          staticClass: "h-12",
+          attrs: { src: "img/logo-header.svg", alt: "lulabuy logo" },
+        }),
+      ]),
+      _vm._v(" "),
+      !_vm.hideNavigationItems
+        ? _c(
+            "ul",
+            { staticClass: "flex font-normal items-center text-gray-700" },
+            [
+              _c(
+                "li",
+                { staticClass: "mr-12 cursor-pointer hover:font-bold" },
+                [
+                  _c("router-link", { attrs: { to: { name: "index" } } }, [
+                    _vm._v("Home"),
+                  ]),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "li",
+                { staticClass: "mr-12 cursor-pointer hover:font-bold" },
+                [
+                  _c("router-link", { attrs: { to: { name: "shops" } } }, [
+                    _vm._v("Shops"),
+                  ]),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "li",
+                { staticClass: "mr-12 cursor-pointer hover:font-bold" },
+                [
+                  _c("router-link", { attrs: { to: { name: "products" } } }, [
+                    _vm._v("Products"),
+                  ]),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "li",
+                { staticClass: "mr-12 cursor-pointer hover:font-bold" },
+                [
+                  _c("router-link", { attrs: { to: { name: "checkout" } } }, [
+                    _vm._v("Cart"),
+                  ]),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _vm._m(0),
+            ]
+          )
+        : _vm._e(),
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function () {
