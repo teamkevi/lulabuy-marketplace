@@ -1,7 +1,7 @@
 <template>
     <div class="mx-20 font-sans">
         <the-header></the-header>
-        <search-bar v-if="!isCheckout"></search-bar>
+        <search-bar v-if="!hideSearchBar"></search-bar>
         <router-view></router-view>
     </div>
 </template>
@@ -16,8 +16,8 @@ export default {
         SearchBar
     },
     computed: {
-        isCheckout() {
-            return this.$route.name === 'checkout'
+        hideSearchBar() {
+            return this.$route.name === 'checkout' || this.$route.name === 'register'
         }
     }
 }
