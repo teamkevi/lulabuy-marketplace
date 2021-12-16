@@ -1,7 +1,7 @@
 <template>
     <nav class="flex justify-between text-lg py-4">
         <div>LOGO</div>
-        <ul class="flex font-normal items-center text-gray-700">
+        <ul class="flex font-normal items-center text-gray-700" v-if="!hideNavigationItems">
             <li class="mr-12 cursor-pointer hover:font-bold">
                 <router-link :to="{name: 'index'}">Home</router-link>
             </li>
@@ -20,3 +20,13 @@
         </ul>
     </nav>
 </template>
+
+<script>
+export default {
+    computed: {
+        hideNavigationItems() {
+            return this.$route.name === 'register'
+        }
+    }
+}
+</script>
