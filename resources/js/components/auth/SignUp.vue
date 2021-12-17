@@ -28,7 +28,7 @@
                 @click="$router.push('index')"
             >Sign In</button>
         </div>
-        <button v-if="!isPhoneNumberVerified" type="button" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-2" v-on:click="verifyPhoneNumber">Next</button>
+        <button v-if="!isPhoneNumberVerified" type="button" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-2 w-full" v-on:click="verifyPhoneNumber">Next</button>
     </div>
 </template>
 

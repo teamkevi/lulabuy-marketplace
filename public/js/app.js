@@ -21085,7 +21085,7 @@ var staticRenderFns = [
         "button",
         {
           staticClass:
-            "bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-2",
+            "bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-2 w-full",
           attrs: { type: "button" },
         },
         [_vm._v("Log In")]
@@ -21222,7 +21222,7 @@ var render = function () {
           "button",
           {
             staticClass:
-              "bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-2",
+              "bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-2 w-full",
             attrs: { type: "button" },
             on: { click: _vm.verifyPhoneNumber },
           },
