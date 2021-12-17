@@ -24,7 +24,12 @@
                 <input class="mt-2 mb-4 px-3 py-2 border shadow-sm border-gray-300 placeholder-gray-400 focus:outline-none w-full rounded-md" type="password" id="password" name="password">
                 <label class="font-medium" for="confirm-password">Confirm Password</label>
                 <input class="mt-2 mb-4 px-3 py-2 border shadow-sm border-gray-300 placeholder-gray-400 focus:outline-none w-full rounded-md" type="password" id="confirm-password" name="confirm-password">
-                <button type="button" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-2" v-on:click="verifyAccount">Sign In</button>
+                <button 
+                    type="button" 
+                    class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-2" 
+                    v-on:click="verifyAccount"
+                    @click="$router.push('index')"
+                >Sign In</button>
             </div>
             <button v-if="!isPhoneNumberVerified" type="button" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-2" v-on:click="verifyPhoneNumber">Next</button>
         </form>
