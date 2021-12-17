@@ -3,14 +3,13 @@ import Index from './pages/Index';
 import Shops from './pages/Shops';
 import Products from './pages/Products';
 import Checkout from './pages/Checkout';
+import Register from './pages/Register';
 
 const routes = [
     {
         path: '/',
-        name: 'checkout',
-        component: Checkout
-        // name: 'index',
-        // component: Index
+        name: 'index',
+        component: Index
     },
     {
         path: '/shops',
@@ -26,6 +25,11 @@ const routes = [
         path: '/checkout',
         name: 'checkout',
         component: Checkout
+    },
+    {
+        path: '/register',
+        name: 'register',
+        component: Register
     }
 ];
 
