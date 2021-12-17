@@ -1,18 +1,18 @@
 <template>
-    <nav class="flex justify-between text-lg py-3 border-b-2 mb-8">
+    <nav class="flex justify-between text-lg border-b-2 mb-4 py-3">
         <router-link :to="{name: 'index'}"><img class="h-12" src="img/logo-header.svg" alt="lulabuy logo"></router-link>
         <ul class="flex font-normal items-center text-gray-700" v-if="!hideNavigationItems">
-            <li class="mr-12 cursor-pointer hover:font-bold">
-                <router-link :to="{name: 'index'}">Home</router-link>
+            <li>
+                <router-link class="mr-12 cursor-pointer hover:font-bold hover:text-red-900" :to="{name: 'index'}">Home</router-link>
             </li>
-            <li class="mr-12 cursor-pointer hover:font-bold">
-                <router-link :to="{name: 'shops'}">Shops</router-link>
+            <li>
+                <router-link class="mr-12 cursor-pointer hover:font-bold hover:text-red-900" :to="{name: 'shops'}">Shops</router-link>
             </li>
-            <li class="mr-12 cursor-pointer hover:font-bold">
-                <router-link :to="{name: 'products'}">Products</router-link>
+            <li>
+                <router-link class="mr-12 cursor-pointer hover:font-bold hover:text-red-900" :to="{name: 'products'}">Products</router-link>
             </li>
-            <li class="mr-12 cursor-pointer hover:font-bold">
-                <router-link :to="{name: 'checkout'}">Cart</router-link>
+            <li>
+                <router-link class="cursor-pointer hover:font-bold hover:text-red-900" :to="{name: 'checkout'}">Cart</router-link>
             </li>
         </ul>
         <div>
