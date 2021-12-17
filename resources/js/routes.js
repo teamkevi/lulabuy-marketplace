@@ -3,7 +3,9 @@ import Index from './pages/Index';
 import Shops from './pages/Shops';
 import Products from './pages/Products';
 import Checkout from './pages/Checkout';
-import Register from './pages/Register';
+import Auth from './pages/Auth';
+import Register from './components/auth/SignUp';
+import Login from './components/auth/Login';
 
 const routes = [
     {
@@ -27,9 +29,21 @@ const routes = [
         component: Checkout
     },
     {
-        path: '/register',
-        name: 'register',
-        component: Register
+        path: '/auth',
+        name: 'auth',
+        component: Auth,
+        children: [
+            {
+                path: '/register',
+                name: 'register',
+                component: Register
+            },
+            {
+                path: '/login',
+                name: 'login',
+                component: Login
+            }
+        ]
     }
 ];
 
