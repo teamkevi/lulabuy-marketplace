@@ -1,9 +1,9 @@
 <template>
     <div>
         <categories-selection></categories-selection>
-        <h1 class="text-3xl mt-8 mb-3">Featured Products</h1>
+        <h1 class="text-2xl mt-8 mb-3 font-bold">Featured Products</h1>
         <products-list></products-list>
-        <h1 class="text-3xl mt-8 mb-3">Featured Shops</h1>
+        <h1 class="text-2xl mt-8 mb-3 font-bold">Featured Shops</h1>
         <shops-list></shops-list>
     </div>
 </template>
