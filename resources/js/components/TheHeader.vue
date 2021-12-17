@@ -36,3 +36,10 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.active {
+    color: rgb(127 29 29);
+    font-weight: 700;
+}
+</style>

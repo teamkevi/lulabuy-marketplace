@@ -12019,3 +12019,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
+.active\:font-bold:active {
+  font-weight: 700;
+}
+.active\:text-red-900:active {
+  --tw-text-opacity: 1;
+  color: rgb(127 29 29 / var(--tw-text-opacity));
+}
