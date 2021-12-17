@@ -15,7 +15,7 @@
                 <router-link :to="{name: 'checkout'}">Cart</router-link>
             </li>
             <li>
-                <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Sign Up</button>
+                <button @click="$router.push('register')" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Sign Up</button>
             </li>
         </ul>
     </nav>

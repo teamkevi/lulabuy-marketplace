@@ -2409,10 +2409,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var routes = [{
   path: '/',
-  name: 'register',
-  component: _pages_Register__WEBPACK_IMPORTED_MODULE_4__["default"] // name: 'index',
-  // component: Index
-
+  name: 'index',
+  component: _pages_Index__WEBPACK_IMPORTED_MODULE_0__["default"]
 }, {
   path: '/shops',
   name: 'shops',
@@ -2425,6 +2423,10 @@ var routes = [{
   path: '/checkout',
   name: 'checkout',
   component: _pages_Checkout__WEBPACK_IMPORTED_MODULE_3__["default"]
+}, {
+  path: '/register',
+  name: 'register',
+  component: _pages_Register__WEBPACK_IMPORTED_MODULE_4__["default"]
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_5__["default"]({
   routes: routes,
@@ -20804,7 +20806,21 @@ var render = function () {
                 1
               ),
               _vm._v(" "),
-              _vm._m(0),
+              _c("li", [
+                _c(
+                  "button",
+                  {
+                    staticClass:
+                      "bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded",
+                    on: {
+                      click: function ($event) {
+                        return _vm.$router.push("register")
+                      },
+                    },
+                  },
+                  [_vm._v("Sign Up")]
+                ),
+              ]),
             ]
           )
         : _vm._e(),
@@ -20812,23 +20828,7 @@ var render = function () {
     1
   )
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c(
-        "button",
-        {
-          staticClass:
-            "bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded",
-        },
-        [_vm._v("Sign Up")]
-      ),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
