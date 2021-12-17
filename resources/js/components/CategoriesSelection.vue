@@ -1,5 +1,5 @@
 <template>
-    <div class="my-4 overflow-x-auto grid grid-flow-col gap-2">
+    <div class="my-2 grid grid-flow-col gap-2">
         <div class="card text-base p-3 cursor-pointer">Category 1</div>
         <div class="card text-base p-3 cursor-pointer">Category 2</div>
         <div class="card text-base p-3 cursor-pointer">Category 3</div>

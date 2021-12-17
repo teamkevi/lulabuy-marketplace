@@ -20862,35 +20862,31 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "my-4 overflow-x-auto grid grid-flow-col gap-2" },
-      [
-        _c("div", { staticClass: "card text-base p-3 cursor-pointer" }, [
-          _vm._v("Category 1"),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "card text-base p-3 cursor-pointer" }, [
-          _vm._v("Category 2"),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "card text-base p-3 cursor-pointer" }, [
-          _vm._v("Category 3"),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "card text-base p-3 cursor-pointer" }, [
-          _vm._v("Category 4"),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "card text-base p-3 cursor-pointer" }, [
-          _vm._v("Category 5"),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "card text-base p-3 cursor-pointer" }, [
-          _vm._v("Category 6"),
-        ]),
-      ]
-    )
+    return _c("div", { staticClass: "my-2 grid grid-flow-col gap-2" }, [
+      _c("div", { staticClass: "card text-base p-3 cursor-pointer" }, [
+        _vm._v("Category 1"),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card text-base p-3 cursor-pointer" }, [
+        _vm._v("Category 2"),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card text-base p-3 cursor-pointer" }, [
+        _vm._v("Category 3"),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card text-base p-3 cursor-pointer" }, [
+        _vm._v("Category 4"),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card text-base p-3 cursor-pointer" }, [
+        _vm._v("Category 5"),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card text-base p-3 cursor-pointer" }, [
+        _vm._v("Category 6"),
+      ]),
+    ])
   },
 ]
 render._withStripped = true
@@ -20986,7 +20982,7 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c(
     "nav",
-    { staticClass: "flex justify-between text-lg py-3 border-b-2 mb-8" },
+    { staticClass: "flex justify-between text-lg border-b-2 mb-4 py-3" },
     [
       _c("router-link", { attrs: { to: { name: "index" } } }, [
         _c("img", {
@@ -21002,44 +20998,64 @@ var render = function () {
             [
               _c(
                 "li",
-                { staticClass: "mr-12 cursor-pointer hover:font-bold" },
                 [
-                  _c("router-link", { attrs: { to: { name: "index" } } }, [
-                    _vm._v("Home"),
-                  ]),
+                  _c(
+                    "router-link",
+                    {
+                      staticClass:
+                        "mr-12 cursor-pointer hover:font-bold hover:text-red-900",
+                      attrs: { to: { name: "index" } },
+                    },
+                    [_vm._v("Home")]
+                  ),
                 ],
                 1
               ),
               _vm._v(" "),
               _c(
                 "li",
-                { staticClass: "mr-12 cursor-pointer hover:font-bold" },
                 [
-                  _c("router-link", { attrs: { to: { name: "shops" } } }, [
-                    _vm._v("Shops"),
-                  ]),
+                  _c(
+                    "router-link",
+                    {
+                      staticClass:
+                        "mr-12 cursor-pointer hover:font-bold hover:text-red-900",
+                      attrs: { to: { name: "shops" } },
+                    },
+                    [_vm._v("Shops")]
+                  ),
                 ],
                 1
               ),
               _vm._v(" "),
               _c(
                 "li",
-                { staticClass: "mr-12 cursor-pointer hover:font-bold" },
                 [
-                  _c("router-link", { attrs: { to: { name: "products" } } }, [
-                    _vm._v("Products"),
-                  ]),
+                  _c(
+                    "router-link",
+                    {
+                      staticClass:
+                        "mr-12 cursor-pointer hover:font-bold hover:text-red-900",
+                      attrs: { to: { name: "products" } },
+                    },
+                    [_vm._v("Products")]
+                  ),
                 ],
                 1
               ),
               _vm._v(" "),
               _c(
                 "li",
-                { staticClass: "mr-12 cursor-pointer hover:font-bold" },
                 [
-                  _c("router-link", { attrs: { to: { name: "checkout" } } }, [
-                    _vm._v("Cart"),
-                  ]),
+                  _c(
+                    "router-link",
+                    {
+                      staticClass:
+                        "cursor-pointer hover:font-bold hover:text-red-900",
+                      attrs: { to: { name: "checkout" } },
+                    },
+                    [_vm._v("Cart")]
+                  ),
                 ],
                 1
               ),
