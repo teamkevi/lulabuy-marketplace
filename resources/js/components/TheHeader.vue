@@ -24,9 +24,14 @@
 
 <script>
 export default {
+    data: function () {
+        return {
+            hideNavigationItemsPages: ['register', 'login']
+        }
+    },
     computed: {
         hideNavigationItems() {
-            return this.$route.name === 'register'
+            return this.hideNavigationItemsPages.includes(this.$route.name);
         }
     }
 }
