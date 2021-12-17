@@ -2125,6 +2125,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   computed: {
     hideNavigationItems: function hideNavigationItems() {
@@ -2229,6 +2230,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
+//
 //
 //
 //
@@ -20805,25 +20811,39 @@ var render = function () {
                 ],
                 1
               ),
-              _vm._v(" "),
-              _c("li", [
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded",
-                    on: {
-                      click: function ($event) {
-                        return _vm.$router.push("register")
-                      },
-                    },
-                  },
-                  [_vm._v("Sign Up")]
-                ),
-              ]),
             ]
           )
         : _vm._e(),
+      _vm._v(" "),
+      _c("div", [
+        _c(
+          "button",
+          {
+            staticClass:
+              "bg-transparent font-base hover:font-bold py-2 px-4 rounded",
+            on: {
+              click: function ($event) {
+                return _vm.$router.push("login")
+              },
+            },
+          },
+          [_vm._v("Log In")]
+        ),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass:
+              "bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded",
+            on: {
+              click: function ($event) {
+                return _vm.$router.push("register")
+              },
+            },
+          },
+          [_vm._v("Sign Up")]
+        ),
+      ]),
     ],
     1
   )
@@ -20862,7 +20882,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "card" }, [
         _c("a", { attrs: { href: "#" } }, [
           _c("img", {
-            staticClass: "h-70",
+            staticClass: "w-full",
             attrs: {
               src: "https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80",
               alt: "image of product",
@@ -20902,7 +20922,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "card" }, [
         _c("a", { attrs: { href: "#" } }, [
           _c("img", {
-            staticClass: "h-70",
+            staticClass: "w-full",
             attrs: {
               src: "https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80",
               alt: "image of product",
@@ -20974,7 +20994,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "card" }, [
         _c("a", { attrs: { href: "#" } }, [
           _c("img", {
-            staticClass: "h-70",
+            staticClass: "w-full",
             attrs: {
               src: "https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80",
               alt: "image of product",
@@ -21195,13 +21215,13 @@ var render = function () {
     [
       _c("categories-selection"),
       _vm._v(" "),
-      _c("h1", { staticClass: "text-3xl mt-8 mb-3" }, [
+      _c("h1", { staticClass: "text-2xl mt-8 mb-3 font-bold" }, [
         _vm._v("Featured Products"),
       ]),
       _vm._v(" "),
       _c("products-list"),
       _vm._v(" "),
-      _c("h1", { staticClass: "text-3xl mt-8 mb-3" }, [
+      _c("h1", { staticClass: "text-2xl mt-8 mb-3 font-bold" }, [
         _vm._v("Featured Shops"),
       ]),
       _vm._v(" "),
@@ -21374,7 +21394,14 @@ var render = function () {
                 staticClass:
                   "w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-2",
                 attrs: { type: "button" },
-                on: { click: _vm.verifyAccount },
+                on: {
+                  click: [
+                    _vm.verifyAccount,
+                    function ($event) {
+                      return _vm.$router.push("index")
+                    },
+                  ],
+                },
               },
               [_vm._v("Sign In")]
             ),
