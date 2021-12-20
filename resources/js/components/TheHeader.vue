@@ -1,5 +1,5 @@
 <template>
-    <nav class="flex justify-between text-lg border-b-2 mb-4 py-3">
+    <nav class="flex justify-between text-lg border-b-2 py-3">
         <router-link :to="{name: 'index'}"><img class="h-12" src="img/logo-header.svg" alt="lulabuy logo"></router-link>
         <ul class="flex font-normal items-center text-gray-700" v-if="!hideNavigationItems">
             <li>
