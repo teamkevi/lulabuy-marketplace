@@ -22,3 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('shops', function (Request $request) {
     return Shop::all();
 });
+
+Route::get('shop/{id}', function (Request $request, $id) {
+    return Shop::find($id);
+});
