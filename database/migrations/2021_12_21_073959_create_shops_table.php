@@ -16,7 +16,7 @@ class CreateShopsTable extends Migration
         Schema::create('shops', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('address')->unique();
+            $table->string('address');
             $table->decimal('rating', $precision = 2, $scale = 1);
             $table->string('slug')->unique();
             $table->timestamps();
