@@ -40,7 +40,7 @@ export default {
         }
     },
     created() {
-        axios.get(`/api/shop/${this.$route.params.id}`).then(response => {
+        axios.get(`/api/shops/${this.$route.params.slug}`).then(response => {
             this.shop = response.data;
         });
   },

@@ -2510,7 +2510,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    axios.get("/api/shop/".concat(this.$route.params.id)).then(function (response) {
+    axios.get("/api/shops/".concat(this.$route.params.slug)).then(function (response) {
       _this.shop = response.data;
     });
   }
@@ -2690,7 +2690,7 @@ var routes = [{
     component: _components_auth_Login__WEBPACK_IMPORTED_MODULE_6__["default"]
   }]
 }, {
-  path: '/shop/:id',
+  path: '/shops/:slug',
   name: 'shop',
   component: _pages_Shop__WEBPACK_IMPORTED_MODULE_8__["default"]
 }, {
@@ -21616,40 +21616,9 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div")
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "-mt-4 grid grid-flow-col gap-2" }, [
-      _c("div", { staticClass: "card text-base p-3 cursor-pointer" }, [
-        _vm._v("Category 1"),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "card text-base p-3 cursor-pointer" }, [
-        _vm._v("Category 2"),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "card text-base p-3 cursor-pointer" }, [
-        _vm._v("Category 3"),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "card text-base p-3 cursor-pointer" }, [
-        _vm._v("Category 4"),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "card text-base p-3 cursor-pointer" }, [
-        _vm._v("Category 5"),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "card text-base p-3 cursor-pointer" }, [
-        _vm._v("Category 6"),
-      ]),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -22201,7 +22170,7 @@ var render = function () {
         "div",
         { key: shop.id, staticClass: "card" },
         [
-          _c("router-link", { attrs: { to: "/shop/" + shop.id } }, [
+          _c("router-link", { attrs: { to: "/shops/" + shop.slug } }, [
             _c("img", {
               staticClass: "w-full",
               attrs: {
@@ -22215,7 +22184,7 @@ var render = function () {
             "div",
             { staticClass: "p-3" },
             [
-              _c("router-link", { attrs: { to: "/shop/" + shop.id } }, [
+              _c("router-link", { attrs: { to: "/shops/" + shop.slug } }, [
                 _c(
                   "p",
                   {

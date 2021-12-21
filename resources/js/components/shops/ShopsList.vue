@@ -1,11 +1,11 @@
 <template>
     <div class="grid grid-cols-4 gap-4">
         <div class="card" v-for="shop in shops" :key="shop.id">
-            <router-link :to="`/shop/${shop.id}`">
+            <router-link :to="`/shops/${shop.slug}`">
                 <img class="w-full" src="https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80" alt="image of product">
             </router-link>
             <div class="p-3">
-                <router-link :to="`/shop/${shop.id}`">
+                <router-link :to="`/shops/${shop.slug}`">
                     <p class="no-underline hover:underline font-bold text-xl cursor-pointer">{{shop.name}}</p>
                 </router-link>
                 <p class="text-base">{{shop.address}}</p>
