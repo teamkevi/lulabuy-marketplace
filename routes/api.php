@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Shop;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +27,14 @@ Route::get('shops', function () {
 Route::get('shops/{shop:slug}', function (Shop $shop) {
     return $shop;
 });
+
+Route::get('products/{product:slug}', function (Product $product) {
+    return Response::json(array(
+        'product' => $product,
+        'shop' => $product->shop
+    ));
+});
+
+// Route::get('shops/{shop:slug}/products/{product:slug}', function (Product $product) {
+//     return $product;
+// });
