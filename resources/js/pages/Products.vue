@@ -1,5 +1,6 @@
 <template>
-    <div class="mt-4">
+    <div>
+        <search-bar placeholder="Search for products"></search-bar>
         <!-- <div class="mb-4 grid justify-end">
             <button @click="toggleOptions" class="btn text-right">Sort By</button>
             <ul v-if="isOptionsVisible">
@@ -15,10 +16,12 @@
 
 <script>
 import ProductsList from '../components/products/ProductsList'
+import SearchBar from '../components/SearchBar'
 
 export default {
     components: {
-        ProductsList
+        ProductsList,
+        SearchBar
     },
     data() {
         return {
