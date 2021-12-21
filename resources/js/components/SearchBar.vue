@@ -1,5 +1,5 @@
 <template>
-    <div class="flex relative w-full mt-4 mb-2">
+    <div class="flex relative w-full my-4">
         <input class="border-1 border-gray-300 bg-red transition h-12 pl-3 pr-16 rounded focus:outline-none w-full text-black text-lg " type="search" name="search" :placeholder="placeholder" />
         <button type="submit" class="absolute right-2 top-3 mr-4">
             <svg class="text-black h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve" width="512px" height="512px">
