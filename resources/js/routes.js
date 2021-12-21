@@ -6,6 +6,8 @@ import Checkout from './pages/Checkout';
 import Auth from './pages/Auth';
 import Register from './components/auth/SignUp';
 import Login from './components/auth/Login';
+import Product from './pages/Product';
+import Shop from './pages/Shop';
 
 const routes = [
     {
@@ -44,7 +46,17 @@ const routes = [
                 component: Login
             }
         ]
-    }
+    },
+    {
+        path: '/product',
+        name: 'product',
+        component: Product
+    },
+    // {
+    //     path: '/',
+    //     name: 'shop',
+    //     component: Shop
+    // }
 ];
 
 const router = new VueRouter({
