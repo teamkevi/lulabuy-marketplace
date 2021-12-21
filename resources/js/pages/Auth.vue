@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col w-1/3 items-center m-auto">
+    <div class="flex flex-col w-1/3 items-center m-auto mt-4">
         <h1 class="text-3xl font-black">{{ heading }}</h1>
         <p class="mt-2">Or <router-link :to=suggestedRoute class="underline decoration-red-600 decoration-2 hover:font-bold text-black">{{ suggestion }}</router-link></p>
         <form class="card rounded w-full p-4 mt-4">
