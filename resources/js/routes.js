@@ -48,15 +48,15 @@ const routes = [
         ]
     },
     {
-        path: '/product',
+        path: '/shop/:id',
+        name: 'shop',
+        component: Shop
+    },
+    {
+        path: '/product/:id',
         name: 'product',
         component: Product
     },
-    // {
-    //     path: '/',
-    //     name: 'shop',
-    //     component: Shop
-    // }
 ];
 
 const router = new VueRouter({
