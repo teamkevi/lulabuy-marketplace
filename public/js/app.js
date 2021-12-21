@@ -2249,6 +2249,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2497,6 +2501,18 @@ __webpack_require__.r(__webpack_exports__);
     ProductsList: _components_products_ProductsList__WEBPACK_IMPORTED_MODULE_1__["default"],
     SearchBar: _components_SearchBar__WEBPACK_IMPORTED_MODULE_2__["default"],
     CategoriesSelection: _components_CategoriesSelection__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
+  data: function data() {
+    return {
+      shop: null
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    axios.get("/api/shop/".concat(this.$route.params.id)).then(function (response) {
+      _this.shop = response.data;
+    });
   }
 });
 
@@ -2674,15 +2690,14 @@ var routes = [{
     component: _components_auth_Login__WEBPACK_IMPORTED_MODULE_6__["default"]
   }]
 }, {
-  path: '/product',
+  path: '/shop/:id',
+  name: 'shop',
+  component: _pages_Shop__WEBPACK_IMPORTED_MODULE_8__["default"]
+}, {
+  path: '/product/:id',
   name: 'product',
   component: _pages_Product__WEBPACK_IMPORTED_MODULE_7__["default"]
-} // {
-//     path: '/',
-//     name: 'shop',
-//     component: Shop
-// }
-];
+}];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_9__["default"]({
   routes: routes,
   mode: "history"
@@ -22182,57 +22197,51 @@ var render = function () {
     "div",
     { staticClass: "grid grid-cols-4 gap-4" },
     _vm._l(_vm.shops, function (shop) {
-      return _c("div", { key: shop.id, staticClass: "card" }, [
-        _vm._m(0, true),
-        _vm._v(" "),
-        _c("div", { staticClass: "p-3" }, [
-          _c("p", [
-            _c(
-              "a",
-              {
-                staticClass:
-                  "no-underline hover:underline font-bold text-xl cursor-pointer",
-                attrs: { href: "#" },
+      return _c(
+        "div",
+        { key: shop.id, staticClass: "card" },
+        [
+          _c("router-link", { attrs: { to: "/shop/" + shop.id } }, [
+            _c("img", {
+              staticClass: "w-full",
+              attrs: {
+                src: "https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80",
+                alt: "image of product",
               },
-              [_vm._v(_vm._s(shop.name))]
-            ),
+            }),
           ]),
           _vm._v(" "),
-          _c("p", [
-            _c(
-              "a",
-              {
-                staticClass:
-                  "no-underline hover:underline text-base cursor-pointer",
-                attrs: { href: "#" },
-              },
-              [_vm._v(_vm._s(shop.address))]
-            ),
-          ]),
-          _vm._v(" "),
-          _c("p", { staticClass: "text-base" }, [_vm._v("3.3km")]),
-        ]),
-      ])
+          _c(
+            "div",
+            { staticClass: "p-3" },
+            [
+              _c("router-link", { attrs: { to: "/shop/" + shop.id } }, [
+                _c(
+                  "p",
+                  {
+                    staticClass:
+                      "no-underline hover:underline font-bold text-xl cursor-pointer",
+                  },
+                  [_vm._v(_vm._s(shop.name))]
+                ),
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "text-base" }, [
+                _vm._v(_vm._s(shop.address)),
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "text-base" }, [_vm._v("3.3km")]),
+            ],
+            1
+          ),
+        ],
+        1
+      )
     }),
     0
   )
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "#" } }, [
-      _c("img", {
-        staticClass: "w-full",
-        attrs: {
-          src: "https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80",
-          alt: "image of product",
-        },
-      }),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -22698,7 +22707,37 @@ var render = function () {
         attrs: { src: "#", alt: "shop banner" },
       }),
       _vm._v(" "),
-      _vm._m(0),
+      _c(
+        "div",
+        {
+          staticClass:
+            "card -mt-8 ml-8 bg-transparent border-0 flex flex-row items-center gap-x-4",
+        },
+        [
+          _c("img", {
+            staticClass: "w-48 h-48 rounded-full border-4 border-white",
+            attrs: {
+              src: "https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80",
+              alt: "shop logo",
+            },
+          }),
+          _vm._v(" "),
+          _c("div", [
+            _c("p", { staticClass: "font-bold text-2xl" }, [
+              _vm._v(_vm._s(_vm.shop.name) + " - " + _vm._s(_vm.shop.address)),
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "text-lg" }, [
+              _vm._v(_vm._s(_vm.shop.rating) + "/5"),
+            ]),
+            _c("a", { staticClass: "ml-2 underline", attrs: { href: "#" } }, [
+              _vm._v("see details"),
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "text-lg" }, [_vm._v("4.6 km")]),
+          ]),
+        ]
+      ),
       _vm._v(" "),
       _c("hr", { staticClass: "my-4" }),
       _vm._v(" "),
@@ -22729,42 +22768,7 @@ var render = function () {
     1
   )
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass:
-          "card -mt-8 ml-8 bg-transparent border-0 flex flex-row items-center gap-x-4",
-      },
-      [
-        _c("img", {
-          staticClass: "w-48 h-48 rounded-full border-4 border-white",
-          attrs: {
-            src: "https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80",
-            alt: "shop logo",
-          },
-        }),
-        _vm._v(" "),
-        _c("div", [
-          _c("p", { staticClass: "font-bold text-2xl" }, [
-            _vm._v("Shop A - Bukit Jalil"),
-          ]),
-          _vm._v(" "),
-          _c("span", { staticClass: "text-lg" }, [_vm._v("4.7/5")]),
-          _c("a", { staticClass: "ml-2 underline", attrs: { href: "#" } }, [
-            _vm._v("see details"),
-          ]),
-          _vm._v(" "),
-          _c("p", { staticClass: "text-lg" }, [_vm._v("4.6 km")]),
-        ]),
-      ]
-    )
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
