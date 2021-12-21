@@ -1,5 +1,6 @@
 <template>
-    <div class="mt-4">
+    <div>
+        <search-bar placeholder="Search for shops"></search-bar>
         <!-- <div>
             <button @click="toggleOptions">Sort By</button>
             <div v-if="isOptionsVisible">
@@ -12,10 +13,12 @@
 
 <script>
 import ShopsList from '../components/shops/ShopsList'
+import SearchBar from '../components/SearchBar'
 
 export default {
     components: {
-        ShopsList
+        ShopsList,
+        SearchBar
     },
     data() {
         return {
