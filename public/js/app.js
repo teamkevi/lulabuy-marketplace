@@ -2074,7 +2074,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2367,6 +2366,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _components_products_ProductsList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/products/ProductsList */ "./resources/js/components/products/ProductsList.vue");
+/* harmony import */ var _components_SearchBar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/SearchBar */ "./resources/js/components/SearchBar.vue");
+//
 //
 //
 //
@@ -2383,9 +2384,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    ProductsList: _components_products_ProductsList__WEBPACK_IMPORTED_MODULE_0__["default"]
+    ProductsList: _components_products_ProductsList__WEBPACK_IMPORTED_MODULE_0__["default"],
+    SearchBar: _components_SearchBar__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
@@ -2466,6 +2469,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _components_shops_ShopsList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/shops/ShopsList */ "./resources/js/components/shops/ShopsList.vue");
+/* harmony import */ var _components_SearchBar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/SearchBar */ "./resources/js/components/SearchBar.vue");
+//
 //
 //
 //
@@ -2479,9 +2484,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    ShopsList: _components_shops_ShopsList__WEBPACK_IMPORTED_MODULE_0__["default"]
+    ShopsList: _components_shops_ShopsList__WEBPACK_IMPORTED_MODULE_0__["default"],
+    SearchBar: _components_SearchBar__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
@@ -21504,13 +21511,7 @@ var render = function () {
   return _c(
     "div",
     { staticClass: "mx-20 font-sans" },
-    [
-      _c("the-header"),
-      _vm._v(" "),
-      _c("search-bar"),
-      _vm._v(" "),
-      _c("router-view"),
-    ],
+    [_c("the-header"), _vm._v(" "), _c("router-view")],
     1
   )
 }
@@ -21544,7 +21545,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "my-2 grid grid-flow-col gap-2" }, [
+    return _c("div", { staticClass: "-mt-4 grid grid-flow-col gap-2" }, [
       _c("div", { staticClass: "card text-base p-3 cursor-pointer" }, [
         _vm._v("Category 1"),
       ]),
@@ -21593,7 +21594,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "flex relative w-full mt-4 mb-2" }, [
+  return _c("div", { staticClass: "flex relative w-full my-4" }, [
     _c("input", {
       staticClass:
         "border-1 border-gray-300 bg-red transition h-12 pl-3 pr-16 rounded focus:outline-none w-full text-black text-lg ",
@@ -22582,7 +22583,15 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "mt-4" }, [_c("products-list")], 1)
+  return _c(
+    "div",
+    [
+      _c("search-bar", { attrs: { placeholder: "Search for products" } }),
+      _vm._v(" "),
+      _c("products-list"),
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -22704,7 +22713,15 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "mt-4" }, [_c("shops-list")], 1)
+  return _c(
+    "div",
+    [
+      _c("search-bar", { attrs: { placeholder: "Search for shops" } }),
+      _vm._v(" "),
+      _c("shops-list"),
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
