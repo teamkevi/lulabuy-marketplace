@@ -22463,16 +22463,16 @@ var render = function () {
       _c("categories-selection"),
       _vm._v(" "),
       _c("h1", { staticClass: "text-2xl mt-8 mb-3 font-bold" }, [
-        _vm._v("Featured Products"),
-      ]),
-      _vm._v(" "),
-      _c("products-list"),
-      _vm._v(" "),
-      _c("h1", { staticClass: "text-2xl mt-8 mb-3 font-bold" }, [
         _vm._v("Featured Shops"),
       ]),
       _vm._v(" "),
       _c("shops-list"),
+      _vm._v(" "),
+      _c("h1", { staticClass: "text-2xl mt-8 mb-3 font-bold" }, [
+        _vm._v("Featured Products"),
+      ]),
+      _vm._v(" "),
+      _c("products-list"),
     ],
     1
   )
