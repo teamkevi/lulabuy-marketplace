@@ -2333,6 +2333,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -2504,7 +2505,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      shop: null
+      shop: null,
+      products: null
     };
   },
   created: function created() {
@@ -2512,6 +2514,9 @@ __webpack_require__.r(__webpack_exports__);
 
     axios.get("/api/shops/".concat(this.$route.params.slug)).then(function (response) {
       _this.shop = response.data;
+    });
+    axios.get("/api/shops/".concat(this.$route.params.slug, "/products")).then(function (response) {
+      _this.products = response.data;
     });
   }
 });
@@ -22061,9 +22066,9 @@ var staticRenderFns = [
       _c("div", { staticClass: "card" }, [
         _c("a", { attrs: { href: "#" } }, [
           _c("img", {
-            staticClass: "w-full",
+            staticClass: "w-full h-80",
             attrs: {
-              src: "https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80",
+              src: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/assortment-of-colorful-ripe-tropical-fruits-top-royalty-free-image-995518546-1564092355.jpg",
               alt: "image of product",
             },
           }),
@@ -22101,7 +22106,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "card" }, [
         _c("a", { attrs: { href: "#" } }, [
           _c("img", {
-            staticClass: "w-full",
+            staticClass: "w-full h-80",
             attrs: {
               src: "https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80",
               alt: "image of product",
@@ -22172,9 +22177,9 @@ var render = function () {
         [
           _c("router-link", { attrs: { to: "/shops/" + shop.slug } }, [
             _c("img", {
-              staticClass: "w-full",
+              staticClass: "w-full h-96",
               attrs: {
-                src: "https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80",
+                src: "https://cdn5.vectorstock.com/i/1000x1000/73/14/letter-s-on-shop-logo-design-vector-35087314.jpg",
                 alt: "image of product",
               },
             }),
@@ -22450,6 +22455,10 @@ var render = function () {
     "div",
     [
       _c("search-bar", { attrs: { placeholder: "Search for anything" } }),
+      _vm._v(" "),
+      _c("img", {
+        attrs: { src: "img/marketplace-banner.jpg", alt: "lulabuy banner" },
+      }),
       _vm._v(" "),
       _c("categories-selection"),
       _vm._v(" "),

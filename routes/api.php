@@ -28,6 +28,10 @@ Route::get('shops/{shop:slug}', function (Shop $shop) {
     return $shop;
 });
 
+Route::get('products', function () {
+    return Product::all();
+});
+
 Route::get('products/{product:slug}', function (Product $product) {
     return Response::json(array(
         'product' => $product,
@@ -35,6 +39,6 @@ Route::get('products/{product:slug}', function (Product $product) {
     ));
 });
 
-// Route::get('shops/{shop:slug}/products/{product:slug}', function (Product $product) {
-//     return $product;
-// });
+Route::get('shops/{shop:slug}/products', function (Shop $shop) {
+    return $shop->products;
+});

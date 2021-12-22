@@ -36,12 +36,16 @@ export default {
     },
     data() {
         return {
-            shop: null
+            shop: null,
+            products: null
         }
     },
     created() {
         axios.get(`/api/shops/${this.$route.params.slug}`).then(response => {
             this.shop = response.data;
+        });
+        axios.get(`/api/shops/${this.$route.params.slug}/products`).then(response => {
+            this.products = response.data;
         });
   },
 }
