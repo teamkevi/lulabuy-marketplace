@@ -2,7 +2,7 @@
     <div class="grid grid-cols-4 gap-4">
         <div class="card" v-for="shop in shops" :key="shop.id">
             <router-link :to="`/shops/${shop.slug}`">
-                <img class="w-full" src="https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80" alt="image of product">
+                <img class="w-full h-96" src="https://cdn5.vectorstock.com/i/1000x1000/73/14/letter-s-on-shop-logo-design-vector-35087314.jpg" alt="image of product">
             </router-link>
             <div class="p-3">
                 <router-link :to="`/shops/${shop.slug}`">
