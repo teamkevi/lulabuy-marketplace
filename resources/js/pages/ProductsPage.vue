@@ -11,7 +11,13 @@
             </ul>
         </div> -->
         <div class="grid grid-cols-4 gap-4">
-            <products-list-item></products-list-item>
+            <products-list-item
+                v-for="product in products" :key="product.id" 
+                v-bind:product_name = "product.name"
+                v-bind:shop_name = "product.shop.name"
+                v-bind:shop_slug = "product.shop.slug"
+                v-bind:price = "product.price"
+            ></products-list-item>
         </div>
     </div>
 </template>

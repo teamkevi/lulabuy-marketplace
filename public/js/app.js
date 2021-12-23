@@ -2107,13 +2107,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
-    item_name: String,
+    product_name: String,
     shop_name: String,
-    price: Number
+    shop_slug: String,
+    price: String
   }
 });
 
@@ -2455,6 +2454,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _components_ProductsListItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/ProductsListItem */ "./resources/js/components/ProductsListItem.vue");
 /* harmony import */ var _components_SearchBar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/SearchBar */ "./resources/js/components/SearchBar.vue");
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -21712,11 +21717,13 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "grid grid-cols-4 gap-4" }, [
-    _c("div", { staticClass: "card" }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _c("div", { staticClass: "p-3" }, [
+  return _c("div", { staticClass: "card" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "p-3" },
+      [
         _c("p", [
           _c(
             "a",
@@ -21725,17 +21732,16 @@ var render = function () {
                 "no-underline hover:underline font-bold text-xl cursor-pointer",
               attrs: { href: "#" },
             },
-            [_vm._v(_vm._s(_vm.item_name))]
+            [_vm._v(_vm._s(_vm.product_name))]
           ),
         ]),
         _vm._v(" "),
-        _c("p", [
+        _c("router-link", { attrs: { to: "/shops/" + _vm.shop_slug } }, [
           _c(
-            "a",
+            "p",
             {
               staticClass:
                 "no-underline hover:underline text-base cursor-pointer",
-              attrs: { href: "#" },
             },
             [_vm._v(_vm._s(_vm.shop_name))]
           ),
@@ -21744,8 +21750,9 @@ var render = function () {
         _c("p", { staticClass: "text-base" }, [
           _vm._v("RM " + _vm._s(_vm.price)),
         ]),
-      ]),
-    ]),
+      ],
+      1
+    ),
   ])
 }
 var staticRenderFns = [
@@ -22686,7 +22693,17 @@ var render = function () {
       _c(
         "div",
         { staticClass: "grid grid-cols-4 gap-4" },
-        [_c("products-list-item")],
+        _vm._l(_vm.products, function (product) {
+          return _c("products-list-item", {
+            key: product.id,
+            attrs: {
+              product_name: product.name,
+              shop_name: product.shop.name,
+              shop_slug: product.shop.slug,
+              price: product.price,
+            },
+          })
+        }),
         1
       ),
     ],
