@@ -24,21 +24,14 @@ Route::get('shops', function () {
     return Shop::all();
 });
 
-Route::get('shops/{shop:slug}', function (Shop $shop) {
-    return $shop;
+Route::get('shops/{slug}', function ($slug) {
+    return Shop::with('products')->where('slug', $slug)->get();
 });
 
 Route::get('products', function () {
-    return Product::all();
+    return Product::with('shop')->get();
 });
 
-Route::get('products/{product:slug}', function (Product $product) {
-    return Response::json(array(
-        'product' => $product,
-        'shop' => $product->shop
-    ));
-});
-
-Route::get('shops/{shop:slug}/products', function (Shop $shop) {
-    return $shop->products;
-});
+// Route::get('shops/{shop:slug}/products', function (Shop $shop) {
+//     return $shop->products;
+// });
