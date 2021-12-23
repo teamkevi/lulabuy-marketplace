@@ -12,18 +12,23 @@
         <hr class="my-4">
         <search-bar placeholder="Search for anything in Shop A"></search-bar>
         <categories-selection></categories-selection>
-        <h1 class="text-2xl mb-3 mt-8 font-bold">Featured Products</h1>
+        <h1 class="text-2xl mb-3 mt-8 font-bold">Products</h1>
         <div class="grid grid-cols-4 gap-4">
-            <products-list-item></products-list-item>
+            <products-list-item
+                v-for="product in shop.products" :key="product.id" 
+                v-bind:product_name = "product.name"
+                v-bind:shop_slug = "shop.slug"
+                v-bind:price = "product.price"
+            ></products-list-item>
         </div>
-        <h1 class="text-2xl mb-3 mt-8 font-bold">Household Items</h1>
+        <!-- <h1 class="text-2xl mb-3 mt-8 font-bold">Household Items</h1>
         <div class="grid grid-cols-4 gap-4">
             <products-list-item></products-list-item>
         </div>
         <h1 class="text-2xl mb-3 mt-8 font-bold">Fresh Goods</h1>
         <div class="grid grid-cols-4 gap-4">
             <products-list-item></products-list-item>
-        </div>
+        </div> -->
     </div>
 </template>
 
@@ -42,16 +47,12 @@ export default {
     },
     data() {
         return {
-            shop: null,
-            products: null
+            shop: null
         }
     },
     created() {
         axios.get(`/api/shops/${this.$route.params.slug}`).then(response => {
-            this.shop = response.data;
-        });
-        axios.get(`/api/shops/${this.$route.params.slug}/products`).then(response => {
-            this.products = response.data;
+            this.shop = response.data[0];
         });
   },
 }
