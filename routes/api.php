@@ -32,6 +32,6 @@ Route::get('products', function () {
     return Product::with('shop')->get();
 });
 
-// Route::get('shops/{shop:slug}/products', function (Shop $shop) {
-//     return $shop->products;
-// });
+Route::get('shops/{shop_slug}/products/{product_slug}', function ($shop_slug, $product_slug) {
+    return Product::with('shop')->where('slug', $product_slug)->get();
+});
