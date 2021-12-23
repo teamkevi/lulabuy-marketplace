@@ -2110,6 +2110,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     product_name: String,
+    product_slug: String,
     shop_name: String,
     shop_slug: String,
     price: String
@@ -2436,6 +2437,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
     ProductsListItem: _components_ProductsListItem__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      product: null
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    axios.get("/api/shops/".concat(this.$route.params.shop_slug, "/products/").concat(this.$route.params.product_slug)).then(function (response) {
+      _this.product = response.data[0];
+    });
   }
 });
 
@@ -2454,6 +2467,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _components_ProductsListItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/ProductsListItem */ "./resources/js/components/ProductsListItem.vue");
 /* harmony import */ var _components_SearchBar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/SearchBar */ "./resources/js/components/SearchBar.vue");
+//
 //
 //
 //
@@ -2753,7 +2767,7 @@ var routes = [{
   name: 'shop-overview-page',
   component: _pages_ShopOverviewPage__WEBPACK_IMPORTED_MODULE_8__["default"]
 }, {
-  path: '/product/:id',
+  path: '/shops/:shop_slug/products/:product_slug',
   name: 'product-overview-page',
   component: _pages_ProductOverviewPage__WEBPACK_IMPORTED_MODULE_7__["default"]
 }];
@@ -21718,62 +21732,75 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "card" }, [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", { staticClass: "p-3" }, [
-      _c("p", [
-        _c(
-          "a",
-          {
-            staticClass:
-              "no-underline hover:underline font-bold text-xl cursor-pointer",
-            attrs: { href: "#" },
+  return _c(
+    "div",
+    { staticClass: "card" },
+    [
+      _c(
+        "router-link",
+        {
+          attrs: {
+            to: "/shops/" + _vm.shop_slug + "/products/" + _vm.product_slug,
           },
-          [_vm._v(_vm._s(_vm.product_name))]
-        ),
-      ]),
-      _vm._v(" "),
-      _vm.shop_name
-        ? _c(
-            "p",
-            [
-              _c(
-                "router-link",
-                {
-                  staticClass:
-                    "no-underline hover:underline text-base cursor-pointer",
-                  attrs: { to: "/shops/" + _vm.shop_slug },
-                },
-                [_vm._v(_vm._s(_vm.shop_name))]
-              ),
-            ],
-            1
-          )
-        : _vm._e(),
-      _vm._v(" "),
-      _c("p", { staticClass: "text-base" }, [
-        _vm._v("RM " + _vm._s(_vm.price)),
-      ]),
-    ]),
-  ])
-}
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "#" } }, [
-      _c("img", {
-        staticClass: "w-full h-72",
-        attrs: {
-          src: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/assortment-of-colorful-ripe-tropical-fruits-top-royalty-free-image-995518546-1564092355.jpg",
-          alt: "image of product",
         },
-      }),
-    ])
-  },
-]
+        [
+          _c("img", {
+            staticClass: "w-full h-72",
+            attrs: {
+              src: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/assortment-of-colorful-ripe-tropical-fruits-top-royalty-free-image-995518546-1564092355.jpg",
+              alt: "image of product",
+            },
+          }),
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "p-3" }, [
+        _c(
+          "p",
+          [
+            _c(
+              "router-link",
+              {
+                staticClass:
+                  "no-underline hover:underline font-bold text-xl cursor-pointer",
+                attrs: {
+                  to:
+                    "/shops/" + _vm.shop_slug + "/products/" + _vm.product_slug,
+                },
+              },
+              [_vm._v(_vm._s(_vm.product_name))]
+            ),
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _vm.shop_name
+          ? _c(
+              "p",
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticClass:
+                      "no-underline hover:underline text-base cursor-pointer",
+                    attrs: { to: "/shops/" + _vm.shop_slug },
+                  },
+                  [_vm._v(_vm._s(_vm.shop_name))]
+                ),
+              ],
+              1
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        _c("p", { staticClass: "text-base" }, [
+          _vm._v("RM " + _vm._s(_vm.price)),
+        ]),
+      ]),
+    ],
+    1
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -22544,51 +22571,8 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("h1", { staticClass: "text-2xl mt-40 mb-3 font-bold" }, [
-      _vm._v("Featured Products"),
-    ]),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "grid grid-cols-4 gap-4" },
-      [_c("products-list-item")],
-      1
-    ),
-  ])
-}
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "flex mx-40 mt-16" }, [
-      _c("div", { staticClass: "flex flex-col gap-y-2 mr-2" }, [
-        _c("img", {
-          staticClass: "rounded w-32 border-4 border-red-600",
-          attrs: {
-            src: "https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80",
-            alt: "image of product",
-          },
-        }),
-        _vm._v(" "),
-        _c("img", {
-          staticClass: "rounded w-32",
-          attrs: {
-            src: "https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80",
-            alt: "image of product",
-          },
-        }),
-        _vm._v(" "),
-        _c("img", {
-          staticClass: "rounded w-32",
-          attrs: {
-            src: "https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80",
-            alt: "image of product",
-          },
-        }),
-      ]),
+    _c("div", { staticClass: "flex mx-40 mt-16" }, [
+      _vm._m(0),
       _vm._v(" "),
       _c("img", {
         staticClass: "rounded basis-5/12",
@@ -22600,59 +22584,20 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("div", { staticClass: "ml-8 w-full basis-5/12" }, [
         _c("p", { staticClass: "text-3xl font-bold" }, [
-          _vm._v("Example Item"),
+          _vm._v(_vm._s(_vm.product.name)),
         ]),
         _vm._v(" "),
-        _c("p", { staticClass: "text-lg" }, [_vm._v("RM29.90")]),
+        _c("p", { staticClass: "text-lg" }, [
+          _vm._v("RM" + _vm._s(_vm.product.price)),
+        ]),
         _vm._v(" "),
         _c("p", { staticClass: "text-base mt-4" }, [
           _vm._v("No description available."),
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "mt-4" }, [
-          _c(
-            "label",
-            { staticClass: "text-lg font-medium", attrs: { for: "variant" } },
-            [_vm._v("Variant:")]
-          ),
-          _c("br"),
-          _vm._v(" "),
-          _c(
-            "select",
-            {
-              staticClass: "px-3 py-2",
-              attrs: { name: "variant", id: "variant" },
-            },
-            [
-              _c("option", { attrs: { value: "0" } }, [
-                _vm._v("Please select a size"),
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "5" } }, [_vm._v("5kg")]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "10" } }, [_vm._v("10kg")]),
-            ]
-          ),
-        ]),
+        _vm._m(1),
         _vm._v(" "),
-        _c("div", { staticClass: "mt-4" }, [
-          _c(
-            "label",
-            { staticClass: "text-lg font-medium", attrs: { for: "quantity" } },
-            [_vm._v("Quantity:")]
-          ),
-          _c("br"),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "my-1 px-3 py-2",
-            attrs: { type: "number", id: "quantity" },
-          }),
-          _c("br"),
-          _vm._v(" "),
-          _c("span", { staticClass: "font-light" }, [
-            _vm._v("Only 4 units available"),
-          ]),
-        ]),
+        _vm._m(2),
         _vm._v(" "),
         _c(
           "button",
@@ -22662,6 +22607,88 @@ var staticRenderFns = [
           },
           [_vm._v("Add To Cart")]
         ),
+      ]),
+    ]),
+  ])
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flex flex-col gap-y-2 mr-2" }, [
+      _c("img", {
+        staticClass: "rounded w-32 border-4 border-red-600",
+        attrs: {
+          src: "https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80",
+          alt: "image of product",
+        },
+      }),
+      _vm._v(" "),
+      _c("img", {
+        staticClass: "rounded w-32",
+        attrs: {
+          src: "https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80",
+          alt: "image of product",
+        },
+      }),
+      _vm._v(" "),
+      _c("img", {
+        staticClass: "rounded w-32",
+        attrs: {
+          src: "https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80",
+          alt: "image of product",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mt-4" }, [
+      _c(
+        "label",
+        { staticClass: "text-lg font-medium", attrs: { for: "variant" } },
+        [_vm._v("Variant:")]
+      ),
+      _c("br"),
+      _vm._v(" "),
+      _c(
+        "select",
+        { staticClass: "px-3 py-2", attrs: { name: "variant", id: "variant" } },
+        [
+          _c("option", { attrs: { value: "0" } }, [
+            _vm._v("Please select a size"),
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "5" } }, [_vm._v("5kg")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "10" } }, [_vm._v("10kg")]),
+        ]
+      ),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mt-4" }, [
+      _c(
+        "label",
+        { staticClass: "text-lg font-medium", attrs: { for: "quantity" } },
+        [_vm._v("Quantity:")]
+      ),
+      _c("br"),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "my-1 px-3 py-2",
+        attrs: { type: "number", id: "quantity" },
+      }),
+      _c("br"),
+      _vm._v(" "),
+      _c("span", { staticClass: "font-light" }, [
+        _vm._v("Only 4 units available"),
       ]),
     ])
   },
@@ -22701,6 +22728,7 @@ var render = function () {
             key: product.id,
             attrs: {
               product_name: product.name,
+              product_slug: product.slug,
               shop_name: product.shop.name,
               shop_slug: product.shop.slug,
               price: product.price,

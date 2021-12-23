@@ -53,7 +53,7 @@ const routes = [
         component: ShopOverviewPage
     },
     {
-        path: '/product/:id',
+        path: '/shops/:shop_slug/products/:product_slug',
         name: 'product-overview-page',
         component: ProductOverviewPage
     },
