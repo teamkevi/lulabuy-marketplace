@@ -6,7 +6,7 @@ import Checkout from './pages/CheckoutPage';
 import Auth from './pages/AuthPage';
 import Register from './components/auth/SignUp';
 import Login from './components/auth/Login';
-import Product from './pages/ProductPage';
+import ProductOverviewPage from './pages/ProductOverviewPage';
 import ShopOverviewPage from './pages/ShopOverviewPage';
 
 const routes = [
@@ -54,8 +54,8 @@ const routes = [
     },
     {
         path: '/product/:id',
-        name: 'product',
-        component: Product
+        name: 'product-overview-page',
+        component: ProductOverviewPage
     },
 ];
 
