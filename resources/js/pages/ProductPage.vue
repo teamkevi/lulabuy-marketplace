@@ -28,16 +28,18 @@
             </div>
         </div>
         <h1 class="text-2xl mt-40 mb-3 font-bold">Featured Products</h1>
-        <products-list></products-list>
+        <div class="grid grid-cols-4 gap-4">
+            <products-list-item></products-list-item>
+        </div>
     </div>
 </template>
 
 <script>
-import ProductsList from '../components/products/ProductsList'
+import ProductsListItem from '../components/ProductsListItem'
 
 export default {
     components: {
-        ProductsList
+        ProductsListItem
     }
 }
 </script>

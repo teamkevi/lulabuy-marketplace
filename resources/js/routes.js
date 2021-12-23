@@ -1,13 +1,13 @@
 import VueRouter from 'vue-router';
-import Index from './pages/Index';
-import Shops from './pages/Shops';
-import Products from './pages/Products';
-import Checkout from './pages/Checkout';
-import Auth from './pages/Auth';
+import Index from './pages/IndexPage';
+import Shops from './pages/ShopsPage';
+import Products from './pages/ProductsPage';
+import Checkout from './pages/CheckoutPage';
+import Auth from './pages/AuthPage';
 import Register from './components/auth/SignUp';
 import Login from './components/auth/Login';
-import Product from './pages/Product';
-import Shop from './pages/Shop';
+import Product from './pages/ProductPage';
+import Shop from './pages/ShopPage';
 
 const routes = [
     {

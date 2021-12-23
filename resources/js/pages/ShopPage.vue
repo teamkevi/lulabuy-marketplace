@@ -13,24 +13,30 @@
         <search-bar placeholder="Search for anything in Shop A"></search-bar>
         <categories-selection></categories-selection>
         <h1 class="text-2xl mb-3 mt-8 font-bold">Featured Products</h1>
-        <products-list></products-list>
+        <div class="grid grid-cols-4 gap-4">
+            <products-list-item></products-list-item>
+        </div>
         <h1 class="text-2xl mb-3 mt-8 font-bold">Household Items</h1>
-        <products-list></products-list>
+        <div class="grid grid-cols-4 gap-4">
+            <products-list-item></products-list-item>
+        </div>
         <h1 class="text-2xl mb-3 mt-8 font-bold">Fresh Goods</h1>
-        <products-list></products-list>
+        <div class="grid grid-cols-4 gap-4">
+            <products-list-item></products-list-item>
+        </div>
     </div>
 </template>
 
 <script>
 import ShopsList from '../components/shops/ShopsList'
-import ProductsList from '../components/products/ProductsList'
+import ProductsListItem from '../components/ProductsListItem'
 import SearchBar from '../components/SearchBar'
 import CategoriesSelection from '../components/CategoriesSelection'
 
 export default {
     components: {
         ShopsList,
-        ProductsList,
+        ProductsListItem,
         SearchBar,
         CategoriesSelection
     },

@@ -10,28 +10,30 @@
                 <li class="p-2 bg-white cursor-pointer hover:text-yellow-600">Price (Low to High)</li>
             </ul>
         </div> -->
-        <products-list></products-list>
+        <div class="grid grid-cols-4 gap-4">
+            <products-list-item></products-list-item>
+        </div>
     </div>
 </template>
 
 <script>
-import ProductsList from '../components/products/ProductsList'
+import ProductsListItem from '../components/ProductsListItem'
 import SearchBar from '../components/SearchBar'
 
 export default {
     components: {
-        ProductsList,
+        ProductsListItem,
         SearchBar
     },
     data() {
         return {
-            isOptionsVisible: false
+            products: null
         }
     },
-    methods: {
-        toggleOptions() {
-            this.isOptionsVisible = !this.isOptionsVisible
-        }
+    created() {
+        const request = axios.get("/api/products").then(response => {
+            this.products = response.data;
+        });
     }
 }
 </script>
