@@ -14,6 +14,7 @@
             <products-list-item
                 v-for="product in products" :key="product.id" 
                 v-bind:product_name = "product.name"
+                v-bind:product_slug = "product.slug"
                 v-bind:shop_name = "product.shop.name"
                 v-bind:shop_slug = "product.shop.slug"
                 v-bind:price = "product.price"
