@@ -7,7 +7,7 @@ import Auth from './pages/AuthPage';
 import Register from './components/auth/SignUp';
 import Login from './components/auth/Login';
 import Product from './pages/ProductPage';
-import Shop from './pages/ShopPage';
+import ShopOverviewPage from './pages/ShopOverviewPage';
 
 const routes = [
     {
@@ -49,8 +49,8 @@ const routes = [
     },
     {
         path: '/shops/:slug',
-        name: 'shop',
-        component: Shop
+        name: 'shop-overview-page',
+        component: ShopOverviewPage
     },
     {
         path: '/product/:id',
