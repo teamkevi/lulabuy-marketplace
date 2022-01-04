@@ -17,6 +17,8 @@
             <products-list-item
                 v-for="product in shop.products" :key="product.id" 
                 v-bind:product_name = "product.name"
+                v-bind:product_slug = "product.slug"
+                v-bind:shop_name = "shop.name"
                 v-bind:shop_slug = "shop.slug"
                 v-bind:price = "product.price"
             ></products-list-item>
@@ -33,14 +35,12 @@
 </template>
 
 <script>
-import ShopsList from '../components/shops/ShopsList'
 import ProductsListItem from '../components/ProductsListItem'
 import SearchBar from '../components/SearchBar'
 import CategoriesSelection from '../components/CategoriesSelection'
 
 export default {
     components: {
-        ShopsList,
         ProductsListItem,
         SearchBar,
         CategoriesSelection
@@ -54,6 +54,6 @@ export default {
         axios.get(`/api/shops/${this.$route.params.slug}`).then(response => {
             this.shop = response.data[0];
         });
-  },
+    },
 }
 </script>

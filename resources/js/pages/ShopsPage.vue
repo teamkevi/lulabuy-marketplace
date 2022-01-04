@@ -7,28 +7,40 @@
                 I am visible
             </div>
         </div> -->
-        <shops-list></shops-list>
+        <div class="grid grid-cols-4 gap-4">
+            <shops-list-item
+                v-for="shop in shops" :key="shop.id" 
+                v-bind:name = "shop.name"
+                v-bind:slug = "shop.slug"
+                v-bind:address = "shop.address"
+            ></shops-list-item>
+        </div>
     </div>
 </template>
 
 <script>
-import ShopsList from '../components/shops/ShopsList'
+import ShopsListItem from '../components/ShopsListItem'
 import SearchBar from '../components/SearchBar'
 
 export default {
     components: {
-        ShopsList,
+        ShopsListItem,
         SearchBar
     },
     data() {
         return {
-            isOptionsVisible: false
+            shops: null
         }
     },
     methods: {
-        toggleOptions() {
-            this.isOptionsVisible = !this.isOptionsVisible
-        }
+        // toggleOptions() {
+        //     this.isOptionsVisible = !this.isOptionsVisible
+        // }
+    },
+    created() {
+        axios.get("/api/shops").then(response => {
+            this.shops = response.data;
+        });
     }
 }
 </script>
