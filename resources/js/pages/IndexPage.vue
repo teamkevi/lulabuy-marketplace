@@ -4,14 +4,7 @@
         <img src="img/marketplace-banner.jpg" alt="lulabuy banner">
         <categories-selection></categories-selection>
         <h1 class="text-2xl mt-8 mb-3 font-bold">Featured Shops</h1>
-        <div class="grid grid-cols-4 gap-4">
-            <shops-list-item
-                v-for="shop in shops" :key="shop.id" 
-                v-bind:name = "shop.name"
-                v-bind:slug = "shop.slug"
-                v-bind:address = "shop.address"
-            ></shops-list-item>
-        </div>
+        <shops-list v-bind:shops="shops"></shops-list>
         <h1 class="text-2xl mt-8 mb-3 font-bold">Featured Products</h1>
         <products-list v-bind:products="products"></products-list>
     </div>
@@ -19,15 +12,15 @@
 
 <script>
 import CategoriesSelection from '../components/CategoriesSelection'
-import ShopsListItem from '../components/ShopsListItem'
+import ShopsList from '../components/ShopsList'
 import SearchBar from '../components/SearchBar'
 import ProductsList from '../components/ProductsList'
 
 export default {
     components: {
-        CategoriesSelection,
-        ShopsListItem,
         SearchBar,
+        CategoriesSelection,
+        ShopsList,
         ProductsList
     },
     data() {
