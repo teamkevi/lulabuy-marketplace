@@ -19,7 +19,6 @@
 
 <script>
 import CategoriesSelection from '../components/CategoriesSelection'
-import ProductsListItem from '../components/ProductsListItem'
 import ShopsListItem from '../components/ShopsListItem'
 import SearchBar from '../components/SearchBar'
 import ProductsList from '../components/ProductsList'
@@ -27,7 +26,6 @@ import ProductsList from '../components/ProductsList'
 export default {
     components: {
         CategoriesSelection,
-        ProductsListItem,
         ShopsListItem,
         SearchBar,
         ProductsList

@@ -2396,10 +2396,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _components_CategoriesSelection__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/CategoriesSelection */ "./resources/js/components/CategoriesSelection.vue");
-/* harmony import */ var _components_ProductsListItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/ProductsListItem */ "./resources/js/components/ProductsListItem.vue");
-/* harmony import */ var _components_ShopsListItem__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/ShopsListItem */ "./resources/js/components/ShopsListItem.vue");
-/* harmony import */ var _components_SearchBar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/SearchBar */ "./resources/js/components/SearchBar.vue");
-/* harmony import */ var _components_ProductsList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/ProductsList */ "./resources/js/components/ProductsList.vue");
+/* harmony import */ var _components_ShopsListItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/ShopsListItem */ "./resources/js/components/ShopsListItem.vue");
+/* harmony import */ var _components_SearchBar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/SearchBar */ "./resources/js/components/SearchBar.vue");
+/* harmony import */ var _components_ProductsList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/ProductsList */ "./resources/js/components/ProductsList.vue");
 //
 //
 //
@@ -2419,7 +2418,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
 
 
 
@@ -2427,10 +2425,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
     CategoriesSelection: _components_CategoriesSelection__WEBPACK_IMPORTED_MODULE_0__["default"],
-    ProductsListItem: _components_ProductsListItem__WEBPACK_IMPORTED_MODULE_1__["default"],
-    ShopsListItem: _components_ShopsListItem__WEBPACK_IMPORTED_MODULE_2__["default"],
-    SearchBar: _components_SearchBar__WEBPACK_IMPORTED_MODULE_3__["default"],
-    ProductsList: _components_ProductsList__WEBPACK_IMPORTED_MODULE_4__["default"]
+    ShopsListItem: _components_ShopsListItem__WEBPACK_IMPORTED_MODULE_1__["default"],
+    SearchBar: _components_SearchBar__WEBPACK_IMPORTED_MODULE_2__["default"],
+    ProductsList: _components_ProductsList__WEBPACK_IMPORTED_MODULE_3__["default"]
   },
   data: function data() {
     return {
@@ -2532,17 +2529,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _components_ProductsListItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/ProductsListItem */ "./resources/js/components/ProductsListItem.vue");
+/* harmony import */ var _components_ProductsList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/ProductsList */ "./resources/js/components/ProductsList.vue");
 /* harmony import */ var _components_SearchBar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/SearchBar */ "./resources/js/components/SearchBar.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -2563,7 +2551,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    ProductsListItem: _components_ProductsListItem__WEBPACK_IMPORTED_MODULE_0__["default"],
+    ProductsList: _components_ProductsList__WEBPACK_IMPORTED_MODULE_0__["default"],
     SearchBar: _components_SearchBar__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
@@ -2574,7 +2562,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    var request = axios.get("/api/products").then(function (response) {
+    axios.get("/api/products").then(function (response) {
       _this.products = response.data;
     });
   }
@@ -22968,23 +22956,7 @@ var render = function () {
     [
       _c("search-bar", { attrs: { placeholder: "Search for products" } }),
       _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "grid grid-cols-4 gap-4" },
-        _vm._l(_vm.products, function (product) {
-          return _c("products-list-item", {
-            key: product.id,
-            attrs: {
-              product_name: product.name,
-              product_slug: product.slug,
-              shop_name: product.shop.name,
-              shop_slug: product.shop.slug,
-              price: product.price,
-            },
-          })
-        }),
-        1
-      ),
+      _c("products-list", { attrs: { products: _vm.products } }),
     ],
     1
   )

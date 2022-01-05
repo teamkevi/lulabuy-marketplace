@@ -10,26 +10,17 @@
                 <li class="p-2 bg-white cursor-pointer hover:text-yellow-600">Price (Low to High)</li>
             </ul>
         </div> -->
-        <div class="grid grid-cols-4 gap-4">
-            <products-list-item
-                v-for="product in products" :key="product.id" 
-                v-bind:product_name = "product.name"
-                v-bind:product_slug = "product.slug"
-                v-bind:shop_name = "product.shop.name"
-                v-bind:shop_slug = "product.shop.slug"
-                v-bind:price = "product.price"
-            ></products-list-item>
-        </div>
+        <products-list v-bind:products="products"></products-list>
     </div>
 </template>
 
 <script>
-import ProductsListItem from '../components/ProductsListItem'
+import ProductsList from '../components/ProductsList'
 import SearchBar from '../components/SearchBar'
 
 export default {
     components: {
-        ProductsListItem,
+        ProductsList,
         SearchBar
     },
     data() {
@@ -38,7 +29,7 @@ export default {
         }
     },
     created() {
-        const request = axios.get("/api/products").then(response => {
+        axios.get("/api/products").then(response => {
             this.products = response.data;
         });
     }
