@@ -13,16 +13,7 @@
             ></shops-list-item>
         </div>
         <h1 class="text-2xl mt-8 mb-3 font-bold">Featured Products</h1>
-        <div class="grid grid-cols-4 gap-4">
-            <products-list-item
-                v-for="product in products" :key="product.id" 
-                v-bind:product_name = "product.name"
-                v-bind:product_slug = "product.slug"
-                v-bind:shop_name = "product.shop.name"
-                v-bind:shop_slug = "product.shop.slug"
-                v-bind:price = "product.price"
-            ></products-list-item>
-        </div>
+        <products-list v-bind:products="products"></products-list>
     </div>
 </template>
 
@@ -31,13 +22,15 @@ import CategoriesSelection from '../components/CategoriesSelection'
 import ProductsListItem from '../components/ProductsListItem'
 import ShopsListItem from '../components/ShopsListItem'
 import SearchBar from '../components/SearchBar'
+import ProductsList from '../components/ProductsList'
 
 export default {
     components: {
         CategoriesSelection,
         ProductsListItem,
         ShopsListItem,
-        SearchBar
+        SearchBar,
+        ProductsList
     },
     data() {
         return {

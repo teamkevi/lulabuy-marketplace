@@ -11786,6 +11786,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-48 {
   height: 12rem;
 }
+.h-60 {
+  height: 15rem;
+}
 .w-full {
   width: 100%;
 }
@@ -11825,6 +11828,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
+.grid-cols-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+.grid-cols-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
 .flex-row {
   flex-direction: row;
 }
@@ -11845,6 +11854,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .gap-4 {
   gap: 1rem;
+}
+.gap-5 {
+  gap: 1.25rem;
 }
 .gap-x-12 {
   -moz-column-gap: 3rem;
