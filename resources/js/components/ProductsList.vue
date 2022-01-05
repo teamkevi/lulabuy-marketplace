@@ -17,12 +17,7 @@
 <script>
 export default {
     props: {
-        products: Object
-        // product_name: String,
-        // product_slug: String,
-        // shop_name: String,
-        // shop_slug: String,
-        // price: String
+        products: Array
     }
 }
 </script>
